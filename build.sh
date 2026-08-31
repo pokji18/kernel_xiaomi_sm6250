@@ -1,7 +1,7 @@
 #!/bin/bash
 # =====================================================================
 # 💫 Build Script — HYBRID MODE
-# 🔧 Created by Michikoextv2
+# 🔧 Created by Nezuko
 # =====================================================================
 
 # Set date kernel
@@ -30,9 +30,9 @@ HOST_CPU=$(grep -m1 "model name" /proc/cpuinfo | cut -d: -f2 | sed 's/^ //')
 
 clear
 echo -e "${MAGENTA}${BOLD}=============================================================="
-echo -e " 💫 MICHIKO Build Script — FINAL HYBRID MODE"
+echo -e " 💫 NEZUKO Build Script — FINAL HYBRID MODE"
 echo -e "==============================================================${RESET}"
-echo -e "${CYAN}👤 Dibuat oleh:${RESET} ${GREEN}Michikoextv2${RESET}"
+echo -e "${CYAN}👤 Dibuat oleh:${RESET} ${GREEN}NezukoKimochii${RESET}"
 echo -e "${YELLOW}🧰 Toolchain:${RESET} ${GREEN}${CLANG_VERSION}${RESET}"
 echo -e "${YELLOW}🧠 CPU:${RESET} ${GREEN}${HOST_CPU}${RESET}"
 echo -e "${YELLOW}💻 Host:${RESET} ${GREEN}${HOST_OS} (${HOST_KERNEL})${RESET}"
@@ -54,8 +54,8 @@ export PATH="$CLANG_DIR/bin:$GCC32_DIR/bin:$PATH"
 
 # Set environment variables
 	export USE_CCACHE=1
-	export KBUILD_BUILD_HOST=xyz
-	export KBUILD_BUILD_USER=standalone
+	export KBUILD_BUILD_HOST=Kimochii
+	export KBUILD_BUILD_USER=Nezuko
 	
 # 🔍 Auto detect defconfig
 CONFIG_PATH="$KERNEL_DIR/arch/arm64/configs/vendor/xiaomi"
@@ -130,7 +130,7 @@ if [ -f "$IMAGE" ]; then
     echo -e "${GREEN}✅ Build kernel berhasil!${RESET}"
     echo -e "${YELLOW}📦 Output:${RESET} ${BLUE}${IMAGE}${RESET}"
     # Rename hasil build otomatis
-    FINAL_IMAGE="$KERNEL_DIR/Millenia-Kernel-${DATE}.img"
+    FINAL_IMAGE="$KERNEL_DIR/Nezuko-Kernel-${DATE}.img"
     cp "$IMAGE" "$FINAL_IMAGE"
     echo -e "${GREEN}💾 Disalin ke:${RESET} ${FINAL_IMAGE}"
 
@@ -139,4 +139,4 @@ else
 fi
 echo -e "${YELLOW}⏱️ Durasi Build:${RESET} ${GREEN}${BUILD_TIME}s${RESET}"
 echo -e "${CYAN}==============================================================${RESET}"
-echo -e "${MAGENTA}${BOLD}🎉 Congratulations by Michikoextv2 — Build Selesai!${RESET}\n"
+echo -e "${MAGENTA}${BOLD}🎉 Congratulations by NezukoKimochii — Build Selesai!${RESET}\n"
